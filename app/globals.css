@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -137,4 +136,14 @@ html { scroll-behavior: smooth; }
   transform: translateY(-4px);
   border-color: rgb(239 68 68 / 0.6);
   box-shadow: 0 10px 30px -10px rgb(239 68 68 / 0.35);
+}
+body {
+  background-color: #111827;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #60a5fa;
+  margin-right: 12px;
 }
