@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`dark ${geistSans.variable}`}>
+    <html lang="en" className={cn("dark", geistSans.variable, "font-sans", inter.variable)}>
       <body className="min-h-full flex flex-col">
         <nav className="flex gap-6 p-4 border-b">
           <Link href="/">Home</Link>
