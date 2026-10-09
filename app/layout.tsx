@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,11 +24,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`dark ${geistSans.variable}`}>
+      <body className="min-h-full flex flex-col">
+        <nav className="flex gap-6 p-4 border-b">
+          <Link href="/">Home</Link>
+          <Link href="/videos">Videos</Link>
+          <Link href="/gear">Gear</Link>
+          <Link href="/community">Community</Link>
+          <Link href="/about">About</Link>
+        </nav>
+        {children}
+        <footer className="p-6 text-sm text-muted-foreground">
+          Fan project, not affiliated with MKBHD.
+        </footer>
+        <Toaster />
+      </body>
     </html>
   );
 }
